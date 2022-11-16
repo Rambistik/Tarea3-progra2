@@ -39,6 +39,9 @@ class Expendedor {
             System.out.println("tomaste todo el vuelto");
         }
     }
+    public Moneda getVuelto() {
+        return dm.getMoneda();
+    }
 
     public Bebida comprarBebida(Moneda mon, int saborbebida) throws PagoInsuficienteException, NoHayBebidaException, PagoIncorrectoException {
         if (mon != null) {
