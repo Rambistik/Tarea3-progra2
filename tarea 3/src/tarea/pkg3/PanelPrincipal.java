@@ -8,7 +8,7 @@ class PanelPrincipal extends JPanel {
     public PanelPrincipal() {
         super();
         setBackground(Color.black);
-        setSize(800, 600);
+        setSize(1600, 1200);
         setVisible(true);
     }
 
