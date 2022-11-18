@@ -27,11 +27,11 @@ class PanelPrincipal extends JPanel implements MouseListener, ActionListener{
     
     public void Botones(){
         JButton boton100 = new JButton("100");
-        boton100.setBounds(10, 10, 100, 40);
+        boton100.setBounds(425, 500, 100, 40);
         JButton boton500 = new JButton("500");
-        boton500.setBounds(200, 10, 100, 40);
+        boton500.setBounds(525, 500, 100, 40);
         JButton boton1000 = new JButton("1000");
-        boton1000.setBounds(700, 10, 100, 40);
+        boton1000.setBounds(625, 500, 100, 40);
         this.add(boton100);
         this.add(boton500);
         this.add(boton1000);
