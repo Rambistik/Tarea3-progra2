@@ -16,6 +16,7 @@ class PanelPrincipal extends JPanel implements MouseListener, ActionListener {
 
     public PanelPrincipal() {
         super();
+        setLayout(null);
         exp = new Expendedor(3, 2);
         com = new Comprador(exp);
         this.setBackground(Color.white);
@@ -24,18 +25,15 @@ class PanelPrincipal extends JPanel implements MouseListener, ActionListener {
     }
     
     public void Botones(){
-        JButton boton100 = new JButton();
-        boton100.setText("100");
+        JButton boton100 = new JButton("100");
         boton100.setBounds(10, 10, 100, 40);
-        JButton boton500 = new JButton();
-        boton500.setText("500");
+        JButton boton500 = new JButton("500");
         boton500.setBounds(200, 10, 100, 40);
-        JButton boton1000 = new JButton();
-        boton1000.setText("1000");
+        JButton boton1000 = new JButton("1000");
         boton1000.setBounds(700, 10, 100, 40);
-        add(boton100);
-        add(boton500);
-        add(boton1000);
+        this.add(boton100);
+        this.add(boton500);
+        this.add(boton1000);
     }
     
 
