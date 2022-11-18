@@ -9,7 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
 
-class PanelPrincipal extends JPanel implements MouseListener, ActionListener {
+class PanelPrincipal extends JPanel implements MouseListener, ActionListener{
 
     private Comprador com;
     private Expendedor exp;
@@ -22,6 +22,7 @@ class PanelPrincipal extends JPanel implements MouseListener, ActionListener {
         this.setBackground(Color.white);
         setSize(1600, 1200);
         setVisible(true);
+        Botones();
     }
     
     public void Botones(){
