@@ -2,6 +2,7 @@ package tarea.pkg3;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.JButton;
 
 class Expendedor {
 
@@ -27,6 +28,8 @@ class Expendedor {
             dbFanta.addBebida(new CocaCola(i + 300, precio, "Fanta"));
         }
     }
+    
+
     public void paint(Graphics g){
         g.setColor(Color.gray);
         g.fillRect(1, 1, 400, 600);
@@ -36,6 +39,8 @@ class Expendedor {
         dm.Paint(g);
    
     }
+    
+
 
     public void CalVuelto(int DinIngresado) {
         int VueltoADevolver = (DinIngresado - this.precio) / 100;
