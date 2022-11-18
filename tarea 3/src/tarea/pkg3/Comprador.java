@@ -9,11 +9,11 @@ class Comprador {
     private int vuelto;
     private String sabor;
 
-    public Comprador(Moneda m, int cualBebida, Expendedor exp) {
+    public Comprador(Expendedor exp) {
         vuelto = 0;
         Bebida bebida;
-        try {
-            bebida = exp.comprarBebida(m,cualBebida);
+        /*try { 
+            bebida = exp.comprarBebida(); 
             sabor = bebida.beber();
             System.out.println("gluglu");
         }catch(PagoIncorrectoException | NoHayBebidaException | PagoInsuficienteException e){
@@ -28,7 +28,7 @@ class Comprador {
                 }
             } while (d != null);
         }
-
+*/
     }
 
     public int Vuelto() {

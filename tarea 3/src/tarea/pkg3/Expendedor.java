@@ -1,5 +1,7 @@
 package tarea.pkg3;
 
+import java.awt.Graphics;
+
 class Expendedor {
 
     private int precio;
@@ -10,6 +12,7 @@ class Expendedor {
     private DepositoBebida dbFanta;
 
     public Expendedor(int precio, int cantidad) {
+       
         this.precio = precio;
 
         dm = new DepositoMonedas();
@@ -22,6 +25,9 @@ class Expendedor {
             dbSprite.addBebida(new CocaCola(i + 200, precio, "Sprite"));
             dbFanta.addBebida(new CocaCola(i + 300, precio, "Fanta"));
         }
+    }
+    public void paint(Graphics g){
+        
     }
 
     public void CalVuelto(int DinIngresado) {

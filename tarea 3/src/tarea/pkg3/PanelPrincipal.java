@@ -8,21 +8,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-
 class PanelPrincipal extends JPanel implements MouseListener, ActionListener {
+
+    private Comprador com;
+    private Expendedor exp;
 
     public PanelPrincipal() {
         super();
-        setBackground(Color.black);
+        exp = new Expendedor(3,2); 
+        com = new Comprador(exp); 
+        this.setBackground(Color.white);
         setSize(1600, 1200);
         setVisible(true);
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        g.setColor(Color.yellow);
-        g.drawLine(600, 100, 200, 200);
     }
 
     @Override
