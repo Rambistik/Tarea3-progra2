@@ -37,8 +37,10 @@ class Expendedor {
         dbSprite.Paint(g);
         dbFanta.Paint(g);
         dm.Paint(g);
+        
    
     }
+    
     
 
 

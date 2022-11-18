@@ -22,13 +22,6 @@ class PanelPrincipal extends JPanel implements MouseListener, ActionListener {
         setSize(1600, 1200);
         setVisible(true);
     }
-
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        com.paint(g);
-        exp.paint(g);
-    }
     
     public void Botones(){
         JButton boton100 = new JButton();
@@ -40,7 +33,18 @@ class PanelPrincipal extends JPanel implements MouseListener, ActionListener {
         JButton boton1000 = new JButton();
         boton1000.setText("1000");
         boton1000.setBounds(700, 10, 100, 40);
+        add(boton100);
+        add(boton500);
+        add(boton1000);
     }
+    
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        com.paint(g);
+        exp.paint(g);
+    } 
     
 
     @Override
