@@ -13,13 +13,20 @@ class PanelPrincipal extends JPanel implements MouseListener, ActionListener {
     private Comprador com;
     private Expendedor exp;
 
-    public PanelPrincipal() { 
+    public PanelPrincipal() {
         super();
-        exp = new Expendedor(3,2); 
-        com = new Comprador(exp); 
+        exp = new Expendedor(3, 2);
+        com = new Comprador(exp);
         this.setBackground(Color.white);
         setSize(1600, 1200);
         setVisible(true);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        com.paint(g);
+        exp.paint(g);
     }
 
     @Override

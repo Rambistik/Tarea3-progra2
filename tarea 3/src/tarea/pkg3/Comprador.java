@@ -1,5 +1,6 @@
 package tarea.pkg3;
 
+import java.awt.Graphics;
 import tarea.pkg3.Expendedor.NoHayBebidaException;
 import tarea.pkg3.Expendedor.PagoIncorrectoException;
 import tarea.pkg3.Expendedor.PagoInsuficienteException;
@@ -28,16 +29,19 @@ class Comprador {
                 }
             } while (d != null);
         }
-*/
+         */
+    }
+
+    public void paint(Graphics g) {
+
     }
 
     public int Vuelto() {
         return vuelto;
     }
-    public String sabor(){
+
+    public String sabor() {
         return sabor;
-          }
+    }
 
 }
-
-
