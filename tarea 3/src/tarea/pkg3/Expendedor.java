@@ -1,5 +1,6 @@
 package tarea.pkg3;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 class Expendedor {
@@ -27,7 +28,8 @@ class Expendedor {
         }
     }
     public void paint(Graphics g){
-        
+        g.setColor(Color.gray);
+        g.fillRect(1, 1, 400, 600);
     }
 
     public void CalVuelto(int DinIngresado) {
@@ -120,4 +122,5 @@ class Expendedor {
             super("Deposito de bebidas vacio");
         }
     }
+    
 }
