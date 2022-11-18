@@ -1,5 +1,7 @@
 package tarea.pkg3;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 //codigo reciclado de pa3p
@@ -28,6 +30,11 @@ class DepositoBebida {
     public int getSize() {
         return d.size();
     }
+
+    void Paint(Graphics g) {
+        g.setColor(Color.white);
+        g.fillRect(20, 20, 75, 400);
+    }
 }
 
 class DepositoMonedas {
@@ -54,6 +61,10 @@ class DepositoMonedas {
 
     public int getSize() {
         return c.size();
+    }
+    void Paint(Graphics g) {
+        g.setColor(Color.black);
+        g.fillRect(300, 175, 75, 75);
     }
 }
 

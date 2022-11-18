@@ -30,6 +30,11 @@ class Expendedor {
     public void paint(Graphics g){
         g.setColor(Color.gray);
         g.fillRect(1, 1, 400, 600);
+        dbCoca.Paint(g);
+        dbSprite.Paint(g);
+        dbFanta.Paint(g);
+        dm.Paint(g);
+   
     }
 
     public void CalVuelto(int DinIngresado) {
