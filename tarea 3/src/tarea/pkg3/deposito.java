@@ -36,6 +36,7 @@ class DepositoBebida {
         g.fillRect(20, 20, 75, 400);
         g.fillRect(120, 20, 75, 400);
         g.fillRect(220, 20, 75, 400);
+        g.fillRect(20, 450, 275, 200);
         
     }
 }
