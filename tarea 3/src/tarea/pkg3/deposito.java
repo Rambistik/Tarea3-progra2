@@ -34,6 +34,9 @@ class DepositoBebida {
     void Paint(Graphics g) {
         g.setColor(Color.white);
         g.fillRect(20, 20, 75, 400);
+        g.fillRect(120, 20, 75, 400);
+        g.fillRect(220, 20, 75, 400);
+        
     }
 }
 
@@ -64,7 +67,7 @@ class DepositoMonedas {
     }
     void Paint(Graphics g) {
         g.setColor(Color.black);
-        g.fillRect(300, 175, 75, 75);
+        g.fillRect(310, 175, 75, 75);
     }
 }
 
