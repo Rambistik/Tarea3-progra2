@@ -2,7 +2,10 @@ package tarea.pkg3;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import javax.swing.JButton;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 class Expendedor {
 
@@ -12,6 +15,9 @@ class Expendedor {
     private DepositoBebida dbCoca;
     private DepositoBebida dbSprite;
     private DepositoBebida dbFanta;
+    private BufferedImage CocaCola;
+    private BufferedImage fanta;
+    private BufferedImage sprite;
 
     public Expendedor(int precio, int cantidad) {
 
