@@ -18,15 +18,19 @@ class Expendedor {
     private BufferedImage CocaCola;
     private BufferedImage fanta;
     private BufferedImage sprite;
+    private int x;
+    private int y;
 
-    public Expendedor(int precio, int cantidad) {
+    public Expendedor(int precio, int cantidad, int x , int y) {
 
         this.precio = precio;
+        this.x = x;
+        this.y = y;
 
         dm = new DepositoMonedas();
-        dbCoca = new DepositoBebida();
-        dbSprite = new DepositoBebida();
-        dbFanta = new DepositoBebida();
+        dbCoca = new DepositoBebida(10,10); 
+        dbSprite = new DepositoBebida(100,10);
+        dbFanta = new DepositoBebida(190,10);
 
         for (int i = 0; i < cantidad; i++) {
             dbCoca.addBebida(new CocaCola(i + 100, precio, 3));
@@ -37,10 +41,10 @@ class Expendedor {
 
     public void paint(Graphics g) {
         g.setColor(Color.gray);
-        g.fillRect(1, 1, 400, 600);
-        dbCoca.Paint(g, 0, 0);
-        dbSprite.Paint(g, 40, 0);
-        dbFanta.Paint(g, 80, 0);
+        g.fillRect(x, y, 400, 600);
+        dbCoca.Paint(g, x, y);
+        dbSprite.Paint(g, x, y);
+        dbFanta.Paint(g, x, y);
         dm.Paint(g);
 
     }

@@ -32,7 +32,12 @@ abstract class Bebida {
         return serie;
     }
 
-    public void paint(Graphics g) {
+    void setXY(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void paint(Graphics g, int x, int y) {
 
         Graphics2D exp = (Graphics2D) g;
 
@@ -47,15 +52,10 @@ abstract class Bebida {
             }
         }
 
-        exp.fillRect(x, y, 60, 30);
+        exp.fillRect(x + this.x, y + this.y, 40, 50);
     }
 
     public abstract String beber();
-
-    void setXY(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
 
 }
 
