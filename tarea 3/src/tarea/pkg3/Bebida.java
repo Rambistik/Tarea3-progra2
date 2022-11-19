@@ -1,19 +1,26 @@
-
 package tarea.pkg3;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import static java.lang.String.valueOf;
 
 abstract class Bebida {
 
-    private String saborBebida;
+    private int saborBebida;
     private int precio;
     private int serie;
+    private int x;
+    private int y;
 
-    public Bebida(int serie, int precio, String saborBebida) {
+    public Bebida(int serie, int precio, int saborBebida) {
         this.saborBebida = saborBebida;
         this.precio = precio;
         this.serie = serie;
     }
 
-    public String getSabor() {
+    public int getSabor() {
         return saborBebida;
     }
 
@@ -25,13 +32,36 @@ abstract class Bebida {
         return serie;
     }
 
+    public void paint(Graphics g) {
+
+        Graphics2D exp = (Graphics2D) g;
+
+        switch (saborBebida) {
+            case 3 ->
+                exp.setColor(Color.orange);
+            case 2 ->
+                exp.setColor(Color.green);
+            case 1 ->
+                exp.setColor(Color.red);
+            default -> {
+            }
+        }
+
+        exp.fillRect(x, y, 60, 30);
+    }
+
     public abstract String beber();
+
+    void setXY(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 
 }
 
-    class CocaCola extends Bebida {
+class CocaCola extends Bebida {
 
-    public CocaCola(int precio, int serie, String sabor) {
+    public CocaCola(int precio, int serie, int sabor) {
         super(precio, serie, sabor);
     }
 
@@ -42,7 +72,7 @@ abstract class Bebida {
 
     class Sprite extends Bebida {
 
-        public Sprite(int precio, int serie, String sabor) {
+        public Sprite(int precio, int serie, int sabor) {
             super(precio, serie, sabor);
         }
 
@@ -54,7 +84,7 @@ abstract class Bebida {
 
     class Fanta extends Bebida {
 
-        public Fanta(int precio, int serie, String sabor) {
+        public Fanta(int precio, int serie, int sabor) {
             super(precio, serie, sabor);
         }
 

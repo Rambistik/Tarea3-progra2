@@ -4,72 +4,75 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-//codigo reciclado de pa3p
 class DepositoBebida {
 
-    private ArrayList<Bebida> d;
+    private ArrayList<Bebida> arrb;
 
     public DepositoBebida() {
-        d = new ArrayList();
+        arrb = new ArrayList();
     }
 
     public void addBebida(Bebida k) {
-        d.add(k);
+        arrb.add(k);
     }
 
     public Bebida getBebida() {
-        if (d.size() == 0) {
+        if (arrb.isEmpty()) {
             return null;
         } else {
             Bebida v;
-            v = d.remove(0);
+            v = arrb.remove(0);
             return v;
         }
     }
 
     public int getSize() {
-        return d.size();
+        return arrb.size();
     }
 
-    void Paint(Graphics g) {
+    void Paint(Graphics g, int x, int y) {
         g.setColor(Color.white);
         g.fillRect(20, 20, 75, 400);
         g.fillRect(120, 20, 75, 400);
         g.fillRect(220, 20, 75, 400);
         g.setColor(Color.black);
         g.fillRect(20, 450, 275, 100);
-        
-    }
-}
 
-class DepositoMonedas {
-
-    private ArrayList<Moneda> c;
-
-    public DepositoMonedas() {
-        c = new ArrayList();
-    }
-
-    public void addMoneda(Moneda dinero) {
-        c.add(dinero);
-    }
-
-    public Moneda getMoneda() {
-        if (c.size() == 0) {
-            return null;
-        } else {
-            Moneda x;
-            x = c.remove(0);
-            return x;
+        for (int i = 0; i < arrb.size(); i++) {
+            arrb.get(i).setXY(x + 40, y + 399 - 33 * (i + 1));
+            arrb.get(i).paint(g);
         }
     }
-
-    public int getSize() {
-        return c.size();
-    }
-    void Paint(Graphics g) {
-        g.setColor(Color.black);
-        g.fillRect(310, 175, 75, 75);
-    }
 }
+    class DepositoMonedas {
+
+        private ArrayList<Moneda> arrmoneda;
+
+        public DepositoMonedas() {
+            arrmoneda = new ArrayList();
+        }
+
+        public void addMoneda(Moneda dinero) {
+            arrmoneda.add(dinero);
+        }
+
+        public Moneda getMoneda() {
+            if (arrmoneda.isEmpty()) {
+                return null;
+            } else {
+                Moneda m;
+                m = arrmoneda.remove(0);
+                return m;
+            }
+        }
+
+        public int getSize() {
+            return arrmoneda.size();
+        }
+
+        void Paint(Graphics g) {
+            g.setColor(Color.black);
+            g.fillRect(310, 175, 75, 75);
+        }
+    }
 

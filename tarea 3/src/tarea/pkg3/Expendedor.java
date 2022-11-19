@@ -14,7 +14,7 @@ class Expendedor {
     private DepositoBebida dbFanta;
 
     public Expendedor(int precio, int cantidad) {
-       
+
         this.precio = precio;
 
         dm = new DepositoMonedas();
@@ -23,26 +23,21 @@ class Expendedor {
         dbFanta = new DepositoBebida();
 
         for (int i = 0; i < cantidad; i++) {
-            dbCoca.addBebida(new CocaCola(i + 100, precio, "Cola"));
-            dbSprite.addBebida(new CocaCola(i + 200, precio, "Sprite"));
-            dbFanta.addBebida(new CocaCola(i + 300, precio, "Fanta"));
+            dbCoca.addBebida(new CocaCola(i + 100, precio, 3));
+            dbSprite.addBebida(new CocaCola(i + 200, precio, 2));
+            dbFanta.addBebida(new CocaCola(i + 300, precio, 1));
         }
     }
-    
 
-    public void paint(Graphics g){
+    public void paint(Graphics g) {
         g.setColor(Color.gray);
         g.fillRect(1, 1, 400, 600);
-        dbCoca.Paint(g);
-        dbSprite.Paint(g);
-        dbFanta.Paint(g);
+        dbCoca.Paint(g, 0, 0);
+        dbSprite.Paint(g, 40, 0);
+        dbFanta.Paint(g, 80, 0);
         dm.Paint(g);
-        
-   
-    }
-    
-    
 
+    }
 
     public void CalVuelto(int DinIngresado) {
         int VueltoADevolver = (DinIngresado - this.precio) / 100;
@@ -59,6 +54,7 @@ class Expendedor {
             System.out.println("tomaste todo el vuelto");
         }
     }
+
     public Moneda getVuelto() {
         return dm.getMoneda();
     }
@@ -71,7 +67,7 @@ class Expendedor {
             if (saborbebida == 1) {
                 aux = dbCoca.getBebida();
                 if (aux == null) {
-                    //
+
                     dm.addMoneda(mon);
                     throw new NoHayBebidaException();
                 } else {
@@ -84,7 +80,7 @@ class Expendedor {
             if (saborbebida == 2) {
                 aux = dbFanta.getBebida();
                 if (aux == null) {
-                    //
+
                     dm.addMoneda(mon);
                     throw new NoHayBebidaException();
                 } else {
@@ -97,9 +93,9 @@ class Expendedor {
             if (saborbebida == 3) {
                 aux = dbSprite.getBebida();
                 if (aux == null) {
-                    //
+
                     dm.addMoneda(mon);
-                    throw new NoHayBebidaException();    
+                    throw new NoHayBebidaException();
                 } else {
                     if (mon.getValue() < aux.getPrecio()) {
                         dbSprite.addBebida(aux);
@@ -134,5 +130,5 @@ class Expendedor {
             super("Deposito de bebidas vacio");
         }
     }
-    
+
 }

@@ -44,12 +44,3 @@ class Moneda1000 extends Moneda {
     }
 }
 
-class Moneda1500 extends Moneda {
-
-    public Moneda1500() {
-    }
-    @Override
-    public int getValue() {
-        return 1500;
-    }
-}
